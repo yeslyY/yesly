@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Games - ألعاب ذكاء</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+    }
+    header {
+      background: #007BFF;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .lang-switch {
+      margin: 10px;
+      text-align: center;
+    }
+    .lang-switch button {
+      margin: 5px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    .lang-switch button:hover {
+      background: #0056b3;
+    }
+    .game {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .game h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .links a {
+      display: inline-block;
+      margin: 10px 10px 0;
+      padding: 10px 15px;
+      background: #28a745;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .links a:hover {
+      background: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="title">🧠 Smart Games</h1>
+  </header>
+
+  <!-- زر تغيير اللغة -->
+  <div class="lang-switch">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('ar')">العربية</button>
+    <button onclick="setLang('fr')">Français</button>
+  </div>
+
+  <!-- الألعاب -->
+  <div class="game">
+    <h2 id="uno-title">UNO</h2>
+    <p id="uno-desc">A fun card game where players try to get rid of all their cards by matching colors or numbers.</p>
+    <div class="links">
+      <a href="https://apps.apple.com/us/app/uno/id1344700142" target="_blank">iOS</a>
+      <a href="https://play.google.com/store/apps/details?id=com.matteljv.uno" target="_blank">Android</a>
+    </div>
+  </div>
+
+  <div class="game">
+    <h2 id="sudoku-title">Sudoku</h2>
+    <p id="sudoku-desc">A number puzzle where you fill the grid so every row, column, and block has numbers 1-9.</p>
+    <div class="links">
+      <a href="https://apps.apple.com/us/app/sudoku-com/id1456663403" target="_blank">iOS</a>
+      <a href="https://play.google.com/store/apps/details?id=com.easybrain.sudoku.android" target="_blank">Android</a>
+    </div>
+  </div>
+
+  <div class="game">
+    <h2 id="chess-title">Chess</h2>
+    <p id="chess-desc">Classic strategy game where two players try to checkmate the opponent’s king.</p>
+    <div class="links">
+      <a href="https://apps.apple.com/us/app/chess-play-learn/id329218549" target="_blank">iOS</a>
+      <a href="https://play.google.com/store/apps/details?id=com.chess" target="_blank">Android</a>
+    </div>
+  </div>
+
+  <div class="game">
+    <h2 id="memory-title">Memory</h2>
+    <p id="memory-desc">Flip cards to find matching pairs. Improves concentration and memory.</p>
+    <div class="links">
+      <a href="https://apps.apple.com/us/app/memory-game/id333878125" target="_blank">iOS</a>
+      <a href="https://play.google.com/store/apps/details?id=se.agram.memory" target="_blank">Android</a>
+    </div>
+  </div>
+
+  <script>
+    const texts = {
+      en: {
+        title: "🧠 Smart Games",
+        uno: "A fun card game where players try to get rid of all their cards by matching colors or numbers.",
+        sudoku: "A number puzzle where you fill the grid so every row, column, and block has numbers 1-9.",
+        chess: "Classic strategy game where two players try to checkmate the opponent’s king.",
+        memory: "Flip cards to find matching pairs. Improves concentration and memory."
+      },
+      ar: {
+        title: "🧠 ألعاب ذكاء",
+        uno: "لعبة بطاقات ممتعة حيث يحاول اللاعب التخلص من أوراقه بمطابقة الألوان أو الأرقام.",
+        sudoku: "لغز أرقام يجب فيه ملء الشبكة بحيث تحتوي كل صف وعمود ومربع على الأرقام من 1 إلى 9.",
+        chess: "لعبة استراتيجية كلاسيكية يحاول فيها لاعبان إسقاط ملك الخصم (كش ملك).",
+        memory: "اقلب البطاقات للعثور على الأزواج المتشابهة. تقوي التركيز والذاكرة."
+      },
+      fr: {
+        title: "🧠 Jeux d'intelligence",
+        uno: "Un jeu de cartes amusant où les joueurs essaient de se débarrasser de toutes leurs cartes en faisant correspondre les couleurs ou les chiffres.",
+        sudoku: "Un puzzle de nombres où vous remplissez la grille pour que chaque ligne, colonne et bloc contienne les chiffres 1-9.",
+        chess: "Jeu de stratégie classique où deux joueurs essaient de mettre le roi adverse en échec et mat.",
+        memory: "Retournez les cartes pour trouver les paires correspondantes. Améliore la mémoire et la concentration."
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("title").innerText = texts[lang].title;
+      document.getElementById("uno-desc").innerText = texts[lang].uno;
+      document.getElementById("sudoku-desc").innerText = texts[lang].sudoku;
+      document.getElementById("chess-desc").innerText = texts[lang].chess;
+      document.getElementById("memory-desc").innerText = texts[lang].memory;
+    }
+  </script>
+
+</body>
+</html>
